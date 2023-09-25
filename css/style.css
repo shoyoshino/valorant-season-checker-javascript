@@ -6,6 +6,7 @@ body {
   font-family: "Roboto", "Noto Sans JP", sans-serif;
   font-feature-settings: "palt";
   background: linear-gradient(45deg, #ff4656ee, #0a141eee);
+  overflow: hidden;
 }
 
 .main {

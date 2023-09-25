@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Reset CSS-->
+    <link rel="stylesheet" href="css/destyle.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <select class="seasons-select"></select>
+
+      <div class="season-start-time">
+        <div class="start-time-year"></div>
+        <div class="start-time-month"></div>
+        <div class="start-time-date"></div>
+        <div class="start-time-day"></div>
+      </div>
+      <div class="season-end-time">
+        <div class="end-time-year"></div>
+        <div class="end-time-month"></div>
+        <div class="end-time-date"></div>
+        <div class="end-time-day"></div>
+      </div>
+
+      <div class="season-days">
+        <div>シーズン日数：</div>
+        <div class="season-days-num"></div>
+        <div>日間</div>
+      </div>
+
+      <div class="day-remaining">
+        <div>残り</div>
+        <div class="day-remaining-num">0</div>
+        <div class="day-remaining-unit">日</div>
+      </div>
+    </main>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

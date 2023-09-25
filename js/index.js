@@ -109,10 +109,10 @@ const setSeasonTime = (season) => {
   let seasonStartTimeMonth = document.querySelector(".start-time-month");
   let seasonStartTimeDate = document.querySelector(".start-time-date");
   let seasonStartTimeDay = document.querySelector(".start-time-day");
-  seasonStartTimeYear.innerText = `${startTimeYear}年`;
-  seasonStartTimeMonth.innerText = `${startTimeMonth}月`;
-  seasonStartTimeDate.innerText = `${startTimeDate}日`;
-  seasonStartTimeDay.innerText = `${startTimeDay}曜日から`;
+  seasonStartTimeYear.innerText = `${startTimeYear}/`;
+  seasonStartTimeMonth.innerText = `${startTimeMonth}/`;
+  seasonStartTimeDate.innerText = `${startTimeDate}`;
+  seasonStartTimeDay.innerText = `(${startTimeDay})から`;
 
   // let seasonEndTime = document.querySelector(".season-end-time");
   // seasonEndTime.innerText = `${endTimeYear}年${endTimeMonth}月${endTimeDate}日${endTimeDay}曜日まで`;
@@ -120,10 +120,10 @@ const setSeasonTime = (season) => {
   let seasonEndTimeMonth = document.querySelector(".end-time-month");
   let seasonEndTimeDate = document.querySelector(".end-time-date");
   let seasonEndTimeDay = document.querySelector(".end-time-day");
-  seasonEndTimeYear.innerText = `${endTimeYear}年`;
-  seasonEndTimeMonth.innerText = `${endTimeMonth}月`;
-  seasonEndTimeDate.innerText = `${endTimeDate}日`;
-  seasonEndTimeDay.innerText = `${endTimeDay}曜日まで`;
+  seasonEndTimeYear.innerText = `${endTimeYear}/`;
+  seasonEndTimeMonth.innerText = `${endTimeMonth}/`;
+  seasonEndTimeDate.innerText = `${endTimeDate}`;
+  seasonEndTimeDay.innerText = `(${endTimeDay})まで`;
 
   let dayRemaining = document.querySelector(".day-remaining-num");
 

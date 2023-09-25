@@ -15,12 +15,29 @@ body {
   padding: 0 20px;
 }
 
+.seasons-select-wrap {
+  position: relative;
+  margin-top: 40px;
+}
+
+.seasons-select-wrap::before {
+  content: "";
+  position: absolute;
+  top: 48%;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid;
+  border-color: transparent transparent #565656 #565656;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  pointer-events: none;
+}
+
 .seasons-select {
   width: 100%;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
-  margin-top: 40px;
   padding: 1em;
   outline: none;
 }

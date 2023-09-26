@@ -51,23 +51,8 @@ body {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
-  margin-top: 40px;
-  user-select: none;
-}
-
-.day-remaining-num {
-  font-size: 15.625vw;
-  text-align: center;
-  background: linear-gradient(0deg, #fff, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px #fff);
-}
-
-@media screen and (max-width: 768px) {
-  .day-remaining-num {
-    font-size: 120px;
-  }
+  display: flex;
+  margin-top: 10px;
 }
 
 .day-remaining-unit {
@@ -103,4 +88,31 @@ body {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
+}
+
+.countdown {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+.countdown-time {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+  background: linear-gradient(0deg, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px #fff);
+  user-select: none;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .countdown {
+    font-size: 9vw;
+  }
 }

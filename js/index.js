@@ -28,7 +28,6 @@ fetch(apiEndpoint)
           option.innerText = season.displayName;
           option.value = season.uuid;
           // 今シーズンにcheckedする
-          console.log(season);
           let today = new Date();
           today.setDate(today.getDate() - 1);
           if (new Date(season.startTime) < today && today < new Date(season.endTime) && season.parentUuid != null) {
@@ -74,6 +73,9 @@ seasonsSelect.addEventListener("change", (event) => {
       setSeasonDays(object.data);
     });
 });
+
+// カウントダウンタイマー
+let countdown = null;
 
 const setSeasonTime = (season) => {
   // ISO8601形式を日本時間に変換
@@ -135,6 +137,47 @@ const setSeasonTime = (season) => {
   } else if (Math.sign(dayRemainingNum) == -1) {
     dayRemaining.innerText = "0";
   }
+
+  if (countdown) {
+    clearInterval(countdown);
+  }
+
+  console.log(countdown);
+
+  countdown = setInterval(function () {
+    // すでにインターバルがあれば止める
+
+    console.log("countdown");
+    const now = new Date(); //今の日時
+    // const target = new Date(now.getFullYear(), now.getMonth() + 1, 0, "23", "59", "59"); //ターゲット日時を取得
+    const target = endTime;
+    const remainTime = target - now; //差分を取る（ミリ秒で返ってくる
+
+    //指定の日時を過ぎていたら処理をしない
+    if (remainTime < 0) {
+      document.querySelector(".countdown-day").innerText = 0;
+      document.querySelector(".countdown-hour").innerText = 0;
+      document.querySelector(".countdown-min").innerText = 0;
+      document.querySelector(".countdown-sec").innerText = 0;
+      clearInterval(countdown);
+      return false;
+    }
+
+    //差分の日・時・分・秒を取得
+    const difDay = Math.floor(remainTime / 1000 / 60 / 60 / 24);
+    const difHour = Math.floor(remainTime / 1000 / 60 / 60) % 24;
+    const difMin = Math.floor(remainTime / 1000 / 60) % 60;
+    const difSec = Math.floor(remainTime / 1000) % 60;
+
+    //残りの日時を上書き
+    document.querySelector(".countdown-day").innerText = difDay;
+    document.querySelector(".countdown-hour").innerText = difHour;
+    document.querySelector(".countdown-min").innerText = difMin;
+    document.querySelector(".countdown-sec").innerText = difSec;
+
+    //指定の日時になればカウントを止める
+    if (remainTime < 0) clearInterval(countdown);
+  }, 1000); //1秒間に1度処理
 };
 
 const setSeasonDays = (season) => {

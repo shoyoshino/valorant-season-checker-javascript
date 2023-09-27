@@ -100,8 +100,8 @@ body {
 .countdown-time {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   color: #fff;
-  font-size: 72px;
   font-weight: 700;
   background: linear-gradient(0deg, #fff, #fff);
   -webkit-background-clip: text;
@@ -111,8 +111,32 @@ body {
   margin-top: 10px;
 }
 
+.countdown-unit {
+  font-size: 32px;
+  line-height: 0.9;
+  margin-right: 6px;
+}
+
 @media screen and (max-width: 768px) {
-  .countdown {
-    font-size: 9vw;
+  .countdown-unit {
+    font-size: 4vw;
+  }
+}
+
+.countdown-day,
+.countdown-hour,
+.countdown-min,
+.countdown-sec {
+  font-size: 86px;
+  line-height: 0.76;
+  margin-right: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .countdown-day,
+  .countdown-hour,
+  .countdown-min,
+  .countdown-sec {
+    font-size: 11vw;
   }
 }
